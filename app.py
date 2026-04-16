@@ -7,10 +7,8 @@ api_key = os.getenv("OPENAI_API_KEY")
 from dotenv import load_dotenv
 import os
 
-load_dotenv(dotenv_path="C:\\RAG\\data\\.env")
+load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-
-print(api_key)  # 👈 이거 추가 (확인용)
 
 from langchain_openai import OpenAIEmbeddings
 
@@ -32,12 +30,12 @@ from langchain_core.runnables import RunnablePassthrough, RunnableWithMessageHis
 from langchain_community.chat_message_histories import ChatMessageHistory
 
 from dotenv import load_dotenv
-load_dotenv("../data/.env")
+load_dotenv()
 
 # PDF 처리 함수
 @st.cache_resource
 def process_pdf():
-    loader = PyPDFLoader(r"C:\RAG\data\2024_KB_부동산_보고서_최종.pdf")
+    loader = PyPDFLoader("2024_KB_부동산_보고서_최종.pdf")
     documents = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
