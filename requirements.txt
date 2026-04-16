@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-community
+langchain-openai
+langchain-chroma
+pypdf
+python-dotenv
+chromadb
+openai
+protobuf==3.20.1
